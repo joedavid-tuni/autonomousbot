@@ -1,0 +1,20 @@
+<!-- -->
+<launch>
+  <!-- Map server -->  
+  <!-- r200, kinect, asus_xtion_pro /home/zed/hectormapping/mapping_nav_control/ -->
+
+  <node name="map_server" pkg="map_server" type="map_server" args="/home/joe/Documents/RoboticsProject/mapping_nav_control/latestmap.yaml" />
+
+  <!-- Localization -->
+  <arg name="initial_pose_x" default="0.0"/>
+  <arg name="initial_pose_y" default="0.0"/>
+  <arg name="initial_pose_a" default="0.0"/>
+  <arg name="custom_amcl_launch_file" default="amcl_settings.launch.xml"/> 
+
+  <include file="$(arg custom_amcl_launch_file)">
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+  </include>
+  
+</launch>

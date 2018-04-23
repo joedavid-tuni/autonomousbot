@@ -1,0 +1,10 @@
+<!-- 
+    ROS velocity smoother and safety (reactive) controller
+
+-->
+<launch>  
+  
+  <include file="velocity_smoother.launch.xml"/>
+  <include file="safety_controller.launch.xml"/>
+  
+</launch>

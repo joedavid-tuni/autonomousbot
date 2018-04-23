@@ -1,0 +1,9 @@
+
+<launch>
+  
+ <!-- <include file="mapping_hector.launch"/>-->
+  <include file="navigation.launch"/>
+  <include file="control.launch"/>
+  <include file="$(find turtlebot_rviz_launchers)/launch/view_navigation.launch"/>
+
+</launch>
